@@ -1,0 +1,97 @@
+
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Define CSS variables for light and dark themes */
+:root {
+    --background-light: #fff;
+    --background-dark: #121212;
+    --text-light: #121212;
+    --text-dark: #fff;
+    --box-background-light: #f9f9f9;
+    --box-background-dark: #444;
+    --box-shadow-light: rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* Registration Form Styles */
+.register {
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+}
+
+.register .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.register h1 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+button[type="submit"] {
+    padding: 0.75rem;
+    border: none;
+    background-color: #ffcc00; /* Yellow */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #e6b800; /* Darker yellow */
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+body.dark-mode .register {
+    color: #ffffff;
+    background: #121212;
+}
+body.dark-mode .container {
+    color: #ffffff;
+    background: #1e1e1e;
+}
+body.dark-mode .container h1 {
+    color: #ffffff;
+}
+body.dark-mode .form-group label {
+    color: #ffffff;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About the German Language</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="../css/content-section.css">
+</head>
+
+<body>
+    <!-- Navigation Bar starts-->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../images/logo.png" alt="German Guru Nepal Logo">
+        </a>
+        <div class="nav-items">
+            <a href="../index.html#about">About Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">German Language
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="why_german.html">Why German Language?</a>
+                    <a href="certification.html">Certification</a>
+                    <a href="all_about_german.html">All about German Language</a>
+                    <a href="./register.html">Registration</a>
+                </div>
+            </div>
+            <a href="../index.html#courses">Courses</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="../index.html#testimonials">Testimonials</a>
+            <a href="../index.html#faqs">FAQs</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="dark-mode-container">
+            <span id="mode-text">Light Mode</span>
+            <label class="switch">
+                <input type="checkbox" onclick="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+    <!-- Navigation Bar ends-->
+
+    <!-- Content Section starts-->
+    <section class="content-section">
+        <div class="content-container">
+            <h2>Certification Exams</h2>
+            <p>German language proficiency can be certified through various exams. Here are some of the most recognized
+                certification exams:</p>
+
+            <h3>TestDaF</h3>
+            <p>The TestDaF (Test Deutsch als Fremdsprache) is an internationally recognized language test for German as
+                a foreign language. It is primarily aimed at those who want to study at a German university or need to
+                provide evidence of their language skills for academic purposes. The test is available worldwide and
+                evaluates reading, listening, writing, and speaking skills.</p>
+            <a href="https://www.testdaf.de/" target="_blank">Learn more about TestDaF</a>
+
+            <h3>Goethe-Zertifikat</h3>
+            <p>The Goethe-Zertifikat is a series of German language exams offered by the Goethe-Institut, ranging from
+                A1 to C2 levels. These exams are designed to measure proficiency according to the Common European
+                Framework of Reference for Languages (CEFR). The certificates are widely recognized by employers and
+                educational institutions.</p>
+            <a href="https://www.goethe.de/en/spr/kup/prf/prf.html" target="_blank">Learn more about
+                Goethe-Zertifikat</a>
+
+            <h3>TELC</h3>
+            <p>TELC (The European Language Certificates) offers a variety of German language exams for different
+                proficiency levels and professional contexts. These exams are recognized by many institutions and
+                employers in Europe and beyond.</p>
+            <a href="https://www.telc.net/en.html" target="_blank">Learn more about TELC</a>
+
+            <h3>DSH</h3>
+            <p>The DSH (Deutsche Sprachprüfung für den Hochschulzugang) is a German language proficiency test required
+                for non-EU international students who wish to study at German universities. The exam assesses reading,
+                listening, and writing skills, as well as the ability to understand and produce scientific language.</p>
+            <a href="https://www.dsh-germany.com/" target="_blank">Learn more about DSH</a>
+        </div>
+    </section>
+    <!-- Content Section ends-->
+
+    <!-- Footer starts-->
+    <footer>
+        <a href="../index.html" class="footer-logo">
+            <img src="../images/logo.png" alt="German Guru Nepal Logo">
+        </a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>German Language</h3>
+                <ul>
+                    <li><a href="./why_german.html">Why German Language?</a></li>
+                    <li><a href="./certification.html">Certification</a></li>
+                    <li><a href="./all_about_german.html">All about German Language</a></li>
+                    <li><a href="./register.html">Registration</a></li>
+                    <!-- Add more links here -->
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="../index.html#courses">Courses</a></li>
+                    <li><a href="../index.html#pricing">Pricing</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#faqs">FAQs</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-contact-icons">
+            <a href="https://www.instagram.com/german.guru.nepal" target="_blank" class="footer-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:germangurunepal@gmail.com" target="_blank" class="footer-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 German Guru Nepal. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer ends-->
+
+    <!-- JavaScript starts-->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const modeText = document.getElementById('mode-text');
+            if (document.body.classList.contains('dark-mode')) {
+                modeText.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                modeText.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        function applyDarkModePreference() {
+            const darkMode = localStorage.getItem('darkMode');
+            const modeText = document.getElementById('mode-text');
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                modeText.textContent = 'Dark Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                modeText.textContent = 'Light Mode';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyDarkModePreference();
+        });
+    </script>
+    <!-- JavaScript ends-->
+</body>
+
+</html>

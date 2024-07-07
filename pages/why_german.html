@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Learn German Language?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="../css/content-section.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar starts-->
+    <nav>
+        <a href="../index.html" class="nav-logo">
+            <img src="../images/logo.png" alt="German Guru Nepal Logo">
+        </a>
+        <div class="nav-items">
+            <a href="../index.html#about">About Us</a>
+            <div class="dropdown">
+                <button class="dropbtn">German Language
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="why_german.html">Why German Language?</a>
+                    <a href="certification.html">Certification</a>
+                    <a href="all_about_german.html">All about German Language</a>
+                    <a href="./register.html">Registration</a>
+                </div>
+            </div>
+            <a href="../index.html#courses">Courses</a>
+            <a href="../index.html#pricing">Pricing</a>
+            <a href="../index.html#testimonials">Testimonials</a>
+            <a href="../index.html#faqs">FAQs</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="dark-mode-container">
+            <span id="mode-text">Light Mode</span>
+            <label class="switch">
+                <input type="checkbox" onclick="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </nav>
+    <!-- Navigation Bar ends-->
+
+    <!-- Content Section starts-->
+    <section id="why-german" class="why-german">
+        <div class="content-container">
+            <h2>Why Learn German Language?</h2>
+            <p>Learning German can open doors to many opportunities. Here are a few reasons why you should consider
+                learning German:</p>
+            <div class="reason-box">
+                <img src="https://images.pexels.com/photos/3183186/pexels-photo-3183186.jpeg"
+                    alt="Career Opportunities">
+                <div>
+                    <strong>Career Opportunities:</strong> Germany has one of the strongest economies in the world, and
+                    many multinational companies are headquartered there. Knowing German can give you an edge in the job
+                    market.
+                </div>
+            </div>
+            <div class="reason-box">
+                <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="Education">
+                <div>
+                    <strong>Education:</strong> Germany offers free or low-cost education to international students.
+                    Many of the top universities in the world are located in Germany.
+                </div>
+            </div>
+            <div class="reason-box">
+                <img src="https://images.pexels.com/photos/761543/pexels-photo-761543.jpeg" alt="Culture">
+                <div>
+                    <strong>Culture:</strong> Germany has a rich cultural history, from literature and music to
+                    philosophy and science. Learning German allows you to access this wealth of knowledge in its
+                    original language.
+                </div>
+            </div>
+            <div class="reason-box">
+                <img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg" alt="Travel">
+                <div>
+                    <strong>Travel:</strong> Germany is a beautiful country with a lot to offer. Knowing the language
+                    can enhance your travel experience.
+                </div>
+            </div>
+            <div class="reason-box">
+                <img src="https://images.pexels.com/photos/3184395/pexels-photo-3184395.jpeg" alt="Networking">
+                <div>
+                    <strong>Networking:</strong> Knowing German allows you to connect with over 100 million native
+                    speakers worldwide.
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content Section ends-->
+
+    <!-- Footer starts-->
+    <footer>
+        <a href="../index.html" class="footer-logo">
+            <img src="../images/logo.png" alt="German Guru Nepal Logo">
+        </a>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>German Language</h3>
+                <ul>
+                    <li><a href="./why_german.html">Why German Language?</a></li>
+                    <li><a href="./certification.html">Certification</a></li>
+                    <li><a href="./all_about_german.html">All about German Language</a></li>
+                    <li><a href="./register.html">Registration</a></li>
+                    <!-- Add more links here -->
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html#about">About Us</a></li>
+                    <li><a href="../index.html#courses">Courses</a></li>
+                    <li><a href="../index.html#pricing">Pricing</a></li>
+                    <li><a href="../index.html#testimonials">Testimonials</a></li>
+                    <li><a href="../index.html#faqs">FAQs</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-contact-icons">
+            <a href="https://www.instagram.com/german.guru.nepal" target="_blank" class="footer-icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="mailto:germangurunepal@gmail.com" target="_blank" class="footer-icon">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 German Guru Nepal. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Footer ends-->
+
+    <!-- JavaScript starts-->
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const modeText = document.getElementById('mode-text');
+            if (document.body.classList.contains('dark-mode')) {
+                modeText.textContent = 'Dark Mode';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                modeText.textContent = 'Light Mode';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+
+        function applyDarkModePreference() {
+            const darkMode = localStorage.getItem('darkMode');
+            const modeText = document.getElementById('mode-text');
+            if (darkMode === 'enabled') {
+                document.body.classList.add('dark-mode');
+                modeText.textContent = 'Dark Mode';
+            } else {
+                document.body.classList.remove('dark-mode');
+                modeText.textContent = 'Light Mode';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            applyDarkModePreference();
+        });
+
+    </script>
+    <!-- JavaScript ends-->
+</body>
+
+</html>
