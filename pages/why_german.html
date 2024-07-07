@@ -172,6 +172,13 @@
         document.addEventListener('DOMContentLoaded', () => {
             applyDarkModePreference();
         });
+        //   responsive menu
+        document.getElementById('hamburger-menu').addEventListener('click', function () {
+            const navItems = document.querySelector('.nav-items');
+            navItems.classList.toggle('active');
+            const darkMode = document.querySelector('.dark-mode-container');
+            darkMode.classList.toggle('active-dark-mode');
+        });
 
     </script>
     <!-- JavaScript ends-->
