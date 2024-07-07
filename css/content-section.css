@@ -26,7 +26,8 @@ body {
     margin-bottom: 1.5rem;
     color: #333;
     text-align: center;
-    border-bottom: 2px solid #ffcc00; /* Yellow */
+    border-bottom: 2px solid #ffcc00;
+    /* Yellow */
     display: inline-block;
     padding-bottom: 0.5rem;
 }
@@ -35,11 +36,13 @@ body {
     font-size: 1.5rem;
     margin-top: 1.5rem;
     color: #444;
-    border-left: 4px solid #ffcc00; /* Yellow */
+    border-left: 4px solid #ffcc00;
+    /* Yellow */
     padding-left: 0.5rem;
 }
 
-.content-container p, .content-container ul {
+.content-container p,
+.content-container ul {
     font-size: 1rem;
     margin-bottom: 1rem;
     line-height: 1.8;
@@ -67,6 +70,7 @@ body {
     color: #ff4500;
     border-bottom: 1px dashed #ff4500;
 }
+
 .learning_duration li {
     text-align: left;
 }
@@ -100,9 +104,14 @@ body.dark-mode footer {
 }
 
 /* Dark Mode Links */
-body.dark-mode .content-container h2, body.dark-mode .content-container p, body.dark-mode .content-container ul, body.dark-mode .content-container h3{
-    color: #ffffff;;
+body.dark-mode .content-container h2,
+body.dark-mode .content-container p,
+body.dark-mode .content-container ul,
+body.dark-mode .content-container h3 {
+    color: #ffffff;
+    ;
 }
+
 body.dark-mode .content-container a {
     color: #4fc3f7;
 }
@@ -117,10 +126,36 @@ body.dark-mode .content-container a:hover {
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    color: #fff; /* White */
+    color: #fff;
+    /* White */
     transition: color 0.3s;
 }
 
 body.dark-mode .dark-mode-container {
     color: #e0e0e0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .nav {
+        background: #1c1f2a;
+    }
+
+    .nav-items {
+        flex: 2;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #1c1f2a;
+    }
+
+    .hamburger-menu {
+        flex: 0;
+    }
+
+    .active-dark-mode {
+        display: none;
+    }
 }
