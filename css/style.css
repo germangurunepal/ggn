@@ -1178,4 +1178,7 @@ body.dark-mode .course-box {
         margin-top: 1.8rem;
         scale: 2;
     }
+    .course-container {
+        margin: 0;
+    }
 }
