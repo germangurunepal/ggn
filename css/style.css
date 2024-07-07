@@ -104,7 +104,8 @@ header {
     transition: background-color 0.6s ease;
 }
 
-.dot:hover, .dot-container .active {
+.dot:hover,
+.dot-container .active {
     background-color: #FFCC00;
 }
 
@@ -166,17 +167,14 @@ nav {
     align-items: center;
     background: linear-gradient(45deg, #000000 53.33%, #FF0000 73.33%, #FFCC00 93.66%);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 0.6rem 0.5rem;
+    padding: 1.3rem 0;
     position: sticky;
     top: 0;
-    padding: 1.3rem 0;
     z-index: 1000;
 }
 
 nav a {
-    position: relative;
     color: #fff;
-    /* White */
     text-decoration: none;
     margin: 0 1.5rem;
     font-weight: bold;
@@ -192,7 +190,6 @@ nav a {
     width: 100%;
     height: 2px;
     background-color: #ffcc00;
-    /* Yellow */
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -203,22 +200,38 @@ nav a:hover::before {
 
 nav a:hover {
     color: #ffcc00;
-    /* Yellow */
 }
 
 .nav-logo img {
     margin-left: 1rem;
     height: 40px;
-    scale: 2.7;
+    transform: scale(2.7);
     filter: invert(1);
 }
 
-.nav a:nth-child(0)::before {
-    content: none;
+.nav-items {
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
 }
 
-.nav-items {
-    margin-left: -20px;
+.dark-mode-container {
+    display: flex;
+    align-items: center;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
 }
 
 /* Dropdown Menu */
@@ -463,15 +476,18 @@ section {
     text-align: center;
 }
 
-.course-box:nth-child(1), .course-box:nth-child(4){
+.course-box:nth-child(1),
+.course-box:nth-child(4) {
     background-color: #e0e7ff;
 }
 
-.course-box:nth-child(2), .course-box:nth-child(5){
+.course-box:nth-child(2),
+.course-box:nth-child(5) {
     background-color: #ffe0e0;
 }
 
-.course-box:nth-child(3), .course-box:nth-child(6){
+.course-box:nth-child(3),
+.course-box:nth-child(6) {
     background-color: #fff7e0;
 }
 
@@ -1104,6 +1120,10 @@ body.dark-mode nav {
     background: #1d1c1c;
 }
 
+body.dark-mode .nav-items {
+    background: #1d1c1c;
+}
+
 body.dark-mode nav a {
     color: #e0e0e0;
 }
@@ -1174,11 +1194,50 @@ body.dark-mode .course-box {
     .parallax {
         height: 60vh;
     }
+
     .footer-logo img {
         margin-top: 1.8rem;
         scale: 2;
     }
+
     .course-container {
         margin: 0;
+    }
+
+    .nav {
+        background: #1c1f2a;
+    }
+
+    .nav-items {
+        flex: 2;
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: #1c1f2a;
+    }
+
+    .hamburger-menu {
+        flex: 0;
+    }
+
+    .active-dark-mode {
+        display: none;
+    }
+
+    .nav-items a {
+        margin: 1rem 0;
+        padding: 1rem;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-items.active {
+        display: flex;
+    }
+    .dropdown-content {
+        min-width: 0;
     }
 }
