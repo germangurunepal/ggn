@@ -1243,4 +1243,15 @@ body.dark-mode .course-box {
     .dropdown-content {
         min-width: 0;
     }
+    .slideshow-container {
+        width: 100%;
+    }
+    .parallax {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/header5.jpg') no-repeat center 0px/cover;
+        color: white;
+        background-position: 70% 50%;
+    }
+    .parallax::after {
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1) ),
+    }
 }
