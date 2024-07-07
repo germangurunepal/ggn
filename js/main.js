@@ -128,3 +128,10 @@ setInterval(function() {
 function navigateToPage(link) {
     window.location.href = link; // Replace with your target page URL
   }
+//   responsive menu
+        document.getElementById('hamburger-menu').addEventListener('click', function () {
+            const navItems = document.querySelector('.nav-items');
+            navItems.classList.toggle('active');
+            const darkMode = document.querySelector('.dark-mode-container');
+            darkMode.classList.toggle('active-dark-mode');
+        });
