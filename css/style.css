@@ -557,7 +557,7 @@ section {
 }
 
 .pricing-card .price {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     margin: 0.6rem 0;
     font-weight: bold;
     color: #333;
@@ -636,7 +636,7 @@ section {
 }
 
 .pricing-button {
-    margin: 0 auto;
+    margin: 6px auto;
     padding: 15px 25px;
     background-color: #ff0000;
     color: white;
