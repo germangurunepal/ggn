@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 German Learning Guide - Your Journey Starts Here</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-btn" data-text="Introduction">Introduction</a>
+                <a href="/A1/grammar.html" class="nav-btn" data-text="Grammar">Grammar</a>
+                <a href="/A1/vocabulary.html" class="nav-btn" data-text="Vocabulary">Vocabulary</a>
+                <a href="/A1/pronunciation.html" class="nav-btn" data-text="Pronunciation">Pronunciation</a>
+                <a href="/A1/phrases.html" class="nav-btn" data-text="Phrases">Phrases</a>
+                <a href="/A1/study.html" class="nav-btn" data-text="Study Plan">Study Plan</a>
+                <a href="/A1/practice.html" class="nav-btn" data-text="Practice">Practice</a>
+                <a href="/A1/resources.html" class="nav-btn" data-text="Resources">Resources</a>
+                <a href="/A1/progress.html" class="nav-btn" data-text="Progress">Progress</a>
+            </div>
+        </nav>
+
+        <!-- Progress Section (Placeholder) -->
+        <div id="progress" class="content-section">
+            <div class="section-header">
+                <div class="section-icon">📊</div>
+                <h2 class="section-title">Progress</h2>
+            </div>
+            <p>Content for Progress coming soon!</p>
+        </div>
+    </div>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            const activeBtn = document.querySelector(`button[onclick="showSection('${sectionId}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.add('active');
+            }
+        }
+
+        // Add scroll detection for navbar
+        const nav = document.querySelector('.nav');
+        const navButtons = document.querySelectorAll('.nav-btn');
+
+        // Store original text with emojis
+        navButtons.forEach(btn => {
+            btn.setAttribute('data-original', btn.textContent);
+        });
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                nav.classList.add('scrolled');
+                // Remove emojis when scrolled
+                navButtons.forEach(btn => {
+                    const text = btn.getAttribute('data-text');
+                    if (text) {
+                        btn.textContent = text;
+                    }
+                });
+            } else {
+                nav.classList.remove('scrolled');
+                // Restore emojis
+                navButtons.forEach(btn => {
+                    const original = btn.getAttribute('data-original');
+                    if (original) {
+                        btn.textContent = original;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
