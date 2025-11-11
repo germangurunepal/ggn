@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A1 German Learning Guide - Your Journey Starts Here</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .main-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        /* Sidebar Table of Contents */
+        .sidebar-toc {
+            position: sticky;
+            top: 60px;
+            width: 220px;
+            flex-shrink: 0;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            max-height: calc(110vh - 150px);
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            padding-bottom: 5px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* .toc-item {
+            margin-bottom: 0px;
+        } */
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 5px 5px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .toc-link:hover {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e3e8f0 100%);
+            transform: translateX(5px);
+            color: var(--primary);
+        }
+
+        .toc-link.active {
+            background: linear-gradient(135deg, var(--gradient-1));
+            color: green;
+            border-left-color: var(--accent);
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+        }
+
+        .toc-icon {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .toc-text {
+            flex: 1;
+            font-size: 0.8rem !important;
+        }
+
+        /* Main content area */
+        .content-main {
+            flex: 1;
+            min-width: 0;
+            /* Prevent flex item from overflowing */
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Grammar sections */
+        .grammar-section {
+            scroll-margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        .grammar-section:target {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(78, 205, 196, 0.05) 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: -10px -20px 40px -20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Progress indicator */
+        .toc-progress {
+            height: 3px;
+            background: var(--light);
+            border-radius: 2px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .toc-progress-bar {
+            height: 100%;
+            background: var(--gradient-1);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .sidebar-toc {
+                position: relative;
+                top: 0;
+                width: 100%;
+                max-height: none;
+            }
+        }
+
+        /* Scrollbar styling */
+        .sidebar-toc::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-toc::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .sidebar-toc::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 3px;
+        }
+
+        .sidebar-toc::-webkit-scrollbar-thumb:hover {
+            background: #ff5252;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-btn" data-text="Introduction">Introduction</a>
+                <a href="/A1/grammar.html" class="nav-btn" data-text="Grammar">Grammar</a>
+                <a href="/A1/vocabulary.html" class="nav-btn" data-text="Vocabulary">Vocabulary</a>
+                <a href="/A1/pronunciation.html" class="nav-btn" data-text="Pronunciation">Pronunciation</a>
+                <a href="/A1/phrases.html" class="nav-btn" data-text="Phrases">Phrases</a>
+                <a href="/A1/study.html" class="nav-btn" data-text="Study Plan">Study Plan</a>
+                <a href="/A1/practice.html" class="nav-btn" data-text="Practice">Practice</a>
+                <a href="/A1/resources.html" class="nav-btn" data-text="Resources">Resources</a>
+                <a href="/A1/progress.html" class="nav-btn" data-text="Progress">Progress</a>
+            </div>
+        </nav>
+
+        <div class="main-container">
+            <aside class="sidebar-toc">
+                <div class="toc-title">Grammar Topics</div>
+
+                <!-- Progress indicator -->
+                <div class="toc-progress">
+                    <div class="toc-progress-bar" id="tocProgress"></div>
+                </div>
+
+                <ul class="toc-list">
+                    <li class="toc-item">
+                        <a href="#articles" class="toc-link">
+                            <span class="toc-text">Articles & Gender</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#indefinite-articles" class="toc-link">
+                            <span class="toc-text">Indefinite Articles</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#definite-vs-indefinite" class="toc-link">
+                            <span class="toc-text">Definite vs Indefinite</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#personal-pronouns" class="toc-link">
+                            <span class="toc-text">Personal Pronouns</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#possessive-pronouns" class="toc-link">
+                            <span class="toc-text">Possessive Pronouns</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#sein" class="toc-link">
+                            <span class="toc-text">SEIN (to be)</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#haben" class="toc-link">
+                            <span class="toc-text">HABEN (to have)</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#regular-verbs" class="toc-link">
+                            <span class="toc-text">Regular Verbs</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#word-order" class="toc-link">
+                            <span class="toc-text">Word Order</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#modal-verbs" class="toc-link">
+                            <span class="toc-text">Modal Verbs</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#accusative" class="toc-link">
+                            <span class="toc-text">Accusative Case</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#questions" class="toc-link">
+                            <span class="toc-text">Question Words</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#negation" class="toc-link">
+                            <span class="toc-text">Negation</span>
+                        </a>
+                    </li>
+                    <li class="toc-item">
+                        <a href="#prepositions" class="toc-link">
+                            <span class="toc-text">Prepositions</span>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <main class="content-main">
+                <!-- Grammar Section -->
+                <div id="grammar" class="content-section">
+                    <div class="section-header">
+                        <div class="section-icon">📚</div>
+                        <h2 class="section-title">Essential Grammar</h2>
+                    </div>
+
+                    <!-- 1. Articles & Gender -->
+                    <div id="articles" class="grammar-section">
+                        <h3>Articles & Gender</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Every German noun has a <strong>gender</strong>: masculine, feminine, or neuter. The
+                                    article
+                                    (<em>der/die/das</em>) tells you which!</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p><strong>Always</strong> use the correct article before nouns. Gender doesn't follow
+                                    logic
+                                    —
+                                    you
+                                    must <strong>memorize</strong> it!</p>
+                            </div>
+                        </div>
+
+                        <div class="grammar-grid">
+                            <div class="grammar-card" style="border-left-color: #4A90E2;">
+                                <h3>🔵 DER (Masculine)</h3>
+                                <p><strong>der Mann</strong> - the man<br>
+                                    <strong>der Tisch</strong> - the table<br>
+                                    <strong>der Hund</strong> - the dog<br>
+                                    <strong>der Apfel</strong> - the apple
+                                </p>
+                            </div>
+                            <div class="grammar-card" style="border-left-color: #E24A90;">
+                                <h3>🔴 DIE (Feminine)</h3>
+                                <p><strong>die Frau</strong> - the woman<br>
+                                    <strong>die Tür</strong> - the door<br>
+                                    <strong>die Katze</strong> - the cat<br>
+                                    <strong>die Lampe</strong> - the lamp
+                                </p>
+                            </div>
+                            <div class="grammar-card" style="border-left-color: #50C878;">
+                                <h3>🟢 DAS (Neuter)</h3>
+                                <p><strong>das Kind</strong> - the child<br>
+                                    <strong>das Buch</strong> - the book<br>
+                                    <strong>das Auto</strong> - the car<br>
+                                    <strong>das Haus</strong> - the house
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">❌ Common Mistake</div>
+                            <p><strong>WRONG:</strong> Die Mann ❌<br>
+                                <strong>CORRECT:</strong> Der Mann ✅
+                            </p>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🧠 Memory Trick</div>
+                            <p>👨 <strong>DER</strong> = Superman | 👩 <strong>DIE</strong> = Wonder Woman | 👶
+                                <strong>DAS</strong>
+                                = Kid
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 2. Indefinite Articles -->
+                    <div id="indefinite-articles" class="grammar-section">
+                        <h3>Indefinite Articles (a/an)</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p><strong>ein/eine</strong> = "a" or "one". Used when mentioning something for the
+                                    <strong>first
+                                        time</strong>.
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p>Same gender rules as <em>der/die/das</em>:<br>
+                                    <strong>ein</strong> (masc/neuter) | <strong>eine</strong> (fem.)
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="grammar-grid">
+                            <div class="grammar-card" style="border-left-color: #4A90E2;">
+                                <h3>🔵 EIN</h3>
+                                <p><strong>ein Mann</strong> - a man<br>
+                                    <strong>ein Hund</strong> - a dog<br>
+                                    <strong>ein Kind</strong> - a child
+                                </p>
+                            </div>
+                            <div class="grammar-card" style="border-left-color: #E24A90;">
+                                <h3>🔴 EINE</h3>
+                                <p><strong>eine Frau</strong> - a woman<br>
+                                    <strong>eine Katze</strong> - a cat<br>
+                                    <strong>eine Lampe</strong> - a lamp
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Example</th>
+                                <th>German</th>
+                                <th>English</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Ich habe <strong>ein</strong> Buch.</td>
+                                <td>I have a book.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Das ist <strong>eine</strong> Lehrerin.</td>
+                                <td>That is a teacher.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Ich sehe <strong>ein</strong> Kind.</td>
+                                <td>I see a child.</td>
+                            </tr>
+                        </table>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🎯 Rule</div>
+                            <p><strong>ein</strong> = der/das → <strong>eine</strong> = die</p>
+                        </div>
+                    </div>
+
+                    <!-- AFTER Accusative Case Section -->
+                    <div id="definite-vs-indefinite" class="grammar-section">
+                        <h3>Definite vs Indefinite Articles</h3>
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                            <strong>der/die/das</strong> = <em>the</em> (specific)<br>
+                            <strong>ein/eine</strong> = <em>a/an</em> (any one)
+                        </p>
+
+                        <table class="verb-table"
+                            style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 1rem;">
+                            <thead>
+                                <tr style="background-color: #f5f7fa;">
+                                    <th
+                                        style="padding: 12px; border: 1px solid #ddd; width: 15%; text-align: center; font-weight: bold;">
+                                        Case</th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; background-color: #e6f0ff;">
+                                        Masculine
+                                    </th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; background-color: #ffe6f0;">
+                                        Feminine
+                                    </th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; background-color: #e6ffe6;">Neuter
+                                    </th>
+                                    <th style="padding: 12px; border: 1px solid #ddd; background-color: #fffbe6;">Plural
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <!-- NOMINATIVE ROW -->
+                                <tr>
+                                    <td
+                                        style="padding: 18px; border: 1px solid #ddd; text-align: center; font-weight: bold; background-color: #eef4ff; font-size: 1.1rem;">
+                                        NOMINATIV<br><small>(Subject)</small>
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #f9fbfd;">
+                                        <strong>der</strong> Mann<br>
+                                        <small style="color: #666;">↓</small><br>
+                                        <strong>ein</strong> Mann
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #fdf6f9;">
+                                        <strong>die</strong> Frau<br>
+                                        <small style="color: #666;">↓</small><br>
+                                        <strong>eine</strong> Frau
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #f6fdf6;">
+                                        <strong>das</strong> Kind<br>
+                                        <small style="color: #666;">↓</small><br>
+                                        <strong>ein</strong> Kind
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #fefdf6;">
+                                        <strong>die</strong> Kinder<br>
+                                        <small style="color: #d00; font-style: italic;">(no indefinite)</small>
+                                    </td>
+                                </tr>
+
+                                <!-- ACCUSATIVE ROW -->
+                                <tr>
+                                    <td
+                                        style="padding: 18px; border: 1px solid #ddd; text-align: center; font-weight: bold; background-color: #d0e7ff; font-size: 1.1rem;">
+                                        AKKUSATIV<br><small>(Direct Object)</small>
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #eef4ff;">
+                                        <strong>den</strong> Mann<br>
+                                        <small style="color: #666;">↓</small><br>
+                                        <strong>einen</strong> Mann
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #ffe6f0;">
+                                        <strong>die</strong> Frau<br>
+                                        <small style="color: #666;">↓</small><br>
+                                        <strong>eine</strong> Frau
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #e6ffe6;">
+                                        <strong>das</strong> Kind<br>
+                                        <small style="color: #666;">↓</small><br>
+                                        <strong>ein</strong> Kind
+                                    </td>
+                                    <td
+                                        style="padding: 16px; border: 1px solid #ddd; text-align: center; background-color: #fffbe6;">
+                                        <strong>die</strong> Kinder<br>
+                                        <small style="color: #d00; font-style: italic;">(no indefinite)</small>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div class="tip-box" style="margin-top: 30px;">
+                            <div class="tip-title">Only Masculine Changes!</div>
+                            <p>
+                                <strong>Nominativ → Akkusativ:</strong><br>
+                                • <code>der → den</code> | <code>ein → einen</code> (masculine only)<br>
+                                • Feminine & neuter: <strong>no change</strong><br>
+                                • Plural: always <strong>die</strong> → use <code>keine</code> for "no"
+                            </p>
+                        </div>
+
+                        <div class="grammar-grid" style="margin-top: 20px;">
+                            <div class="grammar-card">
+                                <h3>Examples</h3>
+                                <p>
+                                    <strong>Der Mann liest.</strong> → The man reads. (Nominativ)<br>
+                                    <strong>Ich sehe den Mann.</strong> → I see the man. (Akkusativ)<br><br>
+                                    <strong>Ein Mann kommt.</strong> → A man comes.<br>
+                                    <strong>Ich sehe einen Mann.</strong> → I see a man.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Personal Pronouns -->
+                    <div id="personal-pronouns" class="grammar-section">
+                        <h3>Personal Pronouns</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Pronouns replace nouns to avoid repetition.</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p>Use instead of repeating the same noun!</p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>German</th>
+                                <th>English</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td><strong>ich</strong></td>
+                                <td>I</td>
+                                <td><strong>Ich</strong> bin Anna. → I am Anna.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>du</strong></td>
+                                <td>you</td>
+                                <td><strong>Du</strong> bist nett. → You are nice.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>er/sie/es</strong></td>
+                                <td>he/she/it</td>
+                                <td><strong>Er</strong> wohnt hier. → He lives here.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>wir</strong></td>
+                                <td>we</td>
+                                <td><strong>Wir</strong> lernen. → We learn.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ihr</strong></td>
+                                <td>you all</td>
+                                <td><strong>Ihr</strong> kommt! → You all come!</td>
+                            </tr>
+                            <tr>
+                                <td><strong>sie/Sie</strong></td>
+                                <td>they/you formal</td>
+                                <td><strong>Sie</strong> sind Lehrer. → They are teachers.</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- 4. Possessive Pronouns -->
+                    <div id="possessive-pronouns" class="grammar-section">
+                        <h3>Possessive Pronouns (my, your, his)</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Shows <strong>ownership</strong>. Ending changes with <strong>noun gender</strong>.
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p>Before any noun to show "my book", "your car", etc.</p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Person</th>
+                                <th>Base</th>
+                                <th>Masc</th>
+                                <th>Fem</th>
+                                <th>Neuter</th>
+                                <th>Plural</th>
+                            </tr>
+                            <tr>
+                                <td>ich</td>
+                                <td>mein</td>
+                                <td>mein Hund</td>
+                                <td>meine Katze</td>
+                                <td>mein Auto</td>
+                                <td>meine Bücher</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>dein</td>
+                                <td>dein Tisch</td>
+                                <td>deine Tasche</td>
+                                <td>dein Kind</td>
+                                <td>deine Hunde</td>
+                            </tr>
+                            <tr>
+                                <td>er</td>
+                                <td>sein</td>
+                                <td>sein Vater</td>
+                                <td>seine Mutter</td>
+                                <td>sein Haus</td>
+                                <td>seine Kinder</td>
+                            </tr>
+                            <tr>
+                                <td>sie (she)</td>
+                                <td>ihr</td>
+                                <td>ihr Bruder</td>
+                                <td>ihre Schwester</td>
+                                <td>ihr Buch</td>
+                                <td>ihre Eltern</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>unser</td>
+                                <td>unser Lehrer</td>
+                                <td>unsere Schule</td>
+                                <td>unser Zimmer</td>
+                                <td>unsere Freunde</td>
+                            </tr>
+                        </table>
+
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>💬 Examples</h3>
+                                <p><strong>Das ist mein Hund.</strong><br>
+                                    <strong>Wo ist deine Tasche?</strong><br>
+                                    <strong>Sein Auto ist rot.</strong>
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>❌ Common Mistake</h3>
+                                <p><strong>WRONG:</strong> mein Katze ❌<br>
+                                    <strong>CORRECT:</strong> meine Katze ✅
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. SEIN (to be) -->
+                    <div id="sein" class="grammar-section">
+                        <h3>SEIN (to be)</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Most important verb! Used for identity, location, age, feelings.</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p><strong>Identity:</strong> Ich bin Lehrer.<br>
+                                    <strong>Location:</strong> Das Buch ist auf dem Tisch.<br>
+                                    <strong>Age:</strong> Ich bin 25 Jahre alt.
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table table-haben-sein">
+                            <tr>
+                                <th>Pronomen (Pronouns)</th>
+                                <th>sein</th>
+                            </tr>
+                            <tr>
+                                <td>ich</td>
+                                <td>bin</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>bist</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>ist</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>sind</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>seid</td>
+                            </tr>
+                            <tr>
+                                <td>sie/sie</td>
+                                <td>sind</td>
+                            </tr>
+                        </table>
+
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>💬 Examples</h3>
+                                <p><strong>Ich bin</strong> Student. → I am a student.<br>
+                                    <strong>Du bist</strong> nett. → You are nice.<br>
+                                    <strong>Das Buch ist</strong> neu. → The book is new.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. HABEN (to have) -->
+                    <div id="haben" class="grammar-section">
+                        <h3>HABEN (to have)</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Used for possession + feelings (hunger, thirst, etc.).</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p><strong>Possession:</strong> Ich habe ein Auto.<br>
+                                    <strong>Feelings:</strong> Wir haben Hunger.
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table table-haben-sein">
+                            <tr>
+                                <th>Pronomen (Pronouns)</th>
+                                <th>haben</th>
+                            </tr>
+                            <tr>
+                                <td>ich</td>
+                                <td>habe</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>hast</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>hat</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>haben</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>habt</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>haben</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- 7. Regular Verbs -->
+                    <div id="regular-verbs" class="grammar-section">
+                        <h3>Regular Verbs</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Follow a simple pattern: remove <strong>-en</strong> + add endings.</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 How to conjugate?</h3>
+                                <p><strong>spielen</strong> → spiel + endings<br>
+                                    <strong>lernen</strong> → lern + endings
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Pronoun</th>
+                                <th>Ending</th>
+                                <th>spielen<br>(to play)</th>
+                                <th>lernen<br>(to learn)</th>
+                                <th>machen<br>(to make/do)</th>
+                                <th>wohnen<br>(to live)</th>
+                                <th>arbeiten<br>(to work)</th>
+                            </tr>
+                            <tr>
+                                <td>ich</td>
+                                <td>-e</td>
+                                <td>spiele</td>
+                                <td>lerne</td>
+                                <td>mache</td>
+                                <td>wohne</td>
+                                <td>arbeite</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>-st</td>
+                                <td>spielst</td>
+                                <td>lernst</td>
+                                <td>machst</td>
+                                <td>wohnst</td>
+                                <td>arbeitest</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>-t</td>
+                                <td>spielt</td>
+                                <td>lernt</td>
+                                <td>macht</td>
+                                <td>wohnt</td>
+                                <td>arbeitet</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>-en</td>
+                                <td>spielen</td>
+                                <td>lernen</td>
+                                <td>machen</td>
+                                <td>wohnen</td>
+                                <td>arbeiten</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>-t</td>
+                                <td>spielt</td>
+                                <td>lernt</td>
+                                <td>macht</td>
+                                <td>wohnt</td>
+                                <td>arbeitet</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>-en</td>
+                                <td>spielen</td>
+                                <td>lernen</td>
+                                <td>machen</td>
+                                <td>wohnen</td>
+                                <td>arbeiten</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- 8. Word Order -->
+                    <div id="word-order" class="grammar-section">
+                        <h3>Word Order</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>📝 Statements</h3>
+                                <p><strong>SUBJECT + VERB + OBJECT</strong><br>
+                                    <strong>Ich</strong> <strong>lerne</strong> <strong>Deutsch</strong>.<br>
+                                    <strong>Er</strong> <strong>spielt</strong> <strong>Fußball</strong>.
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>❓ Questions</h3>
+                                <p><strong>VERB + SUBJECT + OBJECT</strong><br>
+                                    <strong>Lernst</strong> <strong>du</strong> <strong>Deutsch</strong>?<br>
+                                    <strong>Spielt</strong> <strong>er</strong> <strong>Fußball</strong>?
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🥈 Golden Rule</div>
+                            <p><strong>VERB ALWAYS IN POSITION 2</strong><br>
+                                Heute <strong>lerne</strong> ich Deutsch. (Today = 1, verb = 2)</p>
+                        </div>
+                    </div>
+
+                    <!-- 9. Modal Verbs -->
+                    <div id="modal-verbs" class="grammar-section">
+                        <h3>Modal Verbs</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Express ability, obligation, desire + main verb (at end).</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 Structure</h3>
+                                <p><strong>Modal + main verb (infinitive at END)</strong></p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Pronoun</th>
+                                <th>können<br>(can, to be able to)</th>
+                                <th>müssen<br>(must, to have to)</th>
+                                <th>wollen<br>(to want to)</th>
+                                <th>sollen<br>(should, to be supposed to)</th>
+                                <th>dürfen<br>(may, to be allowed to)</th>
+                                <th>mögen<br>(to like)</th>
+                            </tr>
+                            <tr>
+                                <td>ich</td>
+                                <td>kann</td>
+                                <td>muss</td>
+                                <td>will</td>
+                                <td>soll</td>
+                                <td>darf</td>
+                                <td>mag</td>
+                            </tr>
+                            <tr>
+                                <td>du</td>
+                                <td>kannst</td>
+                                <td>musst</td>
+                                <td>willst</td>
+                                <td>sollst</td>
+                                <td>darfst</td>
+                                <td>magst</td>
+                            </tr>
+                            <tr>
+                                <td>er/sie/es</td>
+                                <td>kann</td>
+                                <td>muss</td>
+                                <td>will</td>
+                                <td>soll</td>
+                                <td>darf</td>
+                                <td>mag</td>
+                            </tr>
+                            <tr>
+                                <td>wir</td>
+                                <td>können</td>
+                                <td>müssen</td>
+                                <td>wollen</td>
+                                <td>sollen</td>
+                                <td>dürfen</td>
+                                <td>mögen</td>
+                            </tr>
+                            <tr>
+                                <td>ihr</td>
+                                <td>könnt</td>
+                                <td>müsst</td>
+                                <td>wollt</td>
+                                <td>sollt</td>
+                                <td>dürft</td>
+                                <td>mögt</td>
+                            </tr>
+                            <tr>
+                                <td>sie/Sie</td>
+                                <td>können</td>
+                                <td>müssen</td>
+                                <td>wollen</td>
+                                <td>sollen</td>
+                                <td>dürfen</td>
+                                <td>mögen</td>
+                            </tr>
+                        </table>
+
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>💬 Examples</h3>
+                                <p>
+                                    <strong>Ich kann</strong> schwimmen.<br>
+                                    <strong>Du musst</strong> heute lernen.<br>
+                                    <strong>Er will</strong> ins Kino gehen.<br>
+                                    <strong>Wir sollen</strong> leise sein.<br>
+                                    <strong>Ihr dürft</strong> hier nicht rauchen.<br>
+                                    <strong>Sie mag</strong> keine Äpfel.
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>💡 Important Note</h3>
+                                <p><strong>Möchten</strong> (would like) is the polite form of <strong>wollen</strong>
+                                    and is conjugated the same way.<br><br>
+                                    <em>Ich möchte, du möchtest, er möchte, wir möchten, ihr möchtet, sie
+                                        möchten.</em><br><br>
+                                    e.g., <strong>Ich möchte</strong> einen Tee.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. Accusative Case -->
+                    <div id="accusative" class="grammar-section">
+                        <h3>Accusative Case</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>For <strong>direct objects</strong> (what receives the action).</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p>After verbs like: <strong>sehen</strong>, <strong>haben</strong>,
+                                    <strong>kaufen</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Nominative</th>
+                                <th>Accusative</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>der Mann</td>
+                                <td><strong>den Mann</strong></td>
+                                <td>Ich sehe <strong>den Mann</strong>.</td>
+                            </tr>
+                            <tr>
+                                <td>die Frau</td>
+                                <td>die Frau</td>
+                                <td>Ich sehe die Frau.</td>
+                            </tr>
+                            <tr>
+                                <td>das Kind</td>
+                                <td>das Kind</td>
+                                <td>Ich sehe das Kind.</td>
+                            </tr>
+                            <tr>
+                                <td>ein Auto</td>
+                                <td><strong>einen</strong> Auto</td>
+                                <td>Ich habe <strong>einen</strong> Hund.</td>
+                            </tr>
+                        </table>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🎯 Only 2 Changes!</div>
+                            <p><strong>der → den</strong> | <strong>ein → einen</strong><br>
+                                Everything else stays the same!</p>
+                        </div>
+                    </div>
+
+                    <!-- 11. Question Words -->
+                    <div id="questions" class="grammar-section">
+                        <h3>Question Words</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>❓ Basic Questions</h3>
+                                <p><strong>Wer bist du?</strong> → Who are you?<br>
+                                    <strong>Was machst du?</strong> → What do you do?<br>
+                                    <strong>Wo wohnst du?</strong> → Where do you live?
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>🔍 Advanced</h3>
+                                <p><strong>Warum bist du hier?</strong> → Why are you here?<br>
+                                    <strong>Woher kommst du?</strong> → Where are you from?<br>
+                                    <strong>Wohin gehst du?</strong> → Where are you going?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. NEGATION - DETAILED EXPLANATION -->
+                    <div id="negation" class="grammar-section">
+                        <h3>Negation: nicht vs. kein</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p><strong>nicht</strong> = "not" (negates VERBS/ADJECTIVES)<br>
+                                    <strong>kein</strong> = "no/not a" (negates NOUNS)
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 When to use?</h3>
+                                <p><strong>nicht:</strong> before verb/adjective<br>
+                                    <strong>kein:</strong> before noun (replaces ein/eine)
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Type</th>
+                                <th>Correct</th>
+                                <th>Wrong</th>
+                                <th>English</th>
+                            </tr>
+                            <tr>
+                                <td>nicht + verb</td>
+                                <td>Ich <strong>verstehe nicht</strong>.</td>
+                                <td>Ich verstehe kein ❌</td>
+                                <td>I don't understand.</td>
+                            </tr>
+                            <tr>
+                                <td>nicht + adjective</td>
+                                <td>Das ist <strong>nicht</strong> gut.</td>
+                                <td>Das ist kein gut ❌</td>
+                                <td>That's not good.</td>
+                            </tr>
+                            <tr>
+                                <td>kein + noun</td>
+                                <td>Ich habe <strong>kein</strong> Auto.</td>
+                                <td>Ich habe nicht ein Auto ❌</td>
+                                <td>I have no car.</td>
+                            </tr>
+                            <tr>
+                                <td>keine + noun</td>
+                                <td>Das ist <strong>keine</strong> Katze.</td>
+                                <td>Das ist nicht eine Katze ❌</td>
+                                <td>That's not a cat.</td>
+                            </tr>
+                        </table>
+
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🚫 nicht Examples</h3>
+                                <p><strong>Ich komme nicht.</strong> → I'm not coming.<br>
+                                    <strong>Er ist nicht müde.</strong> → He is not tired.<br>
+                                    <strong>Das ist nicht mein Buch.</strong> → That's not my book.
+                                </p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>❌ kein Examples</h3>
+                                <p><strong>Ich habe <strong>kein</strong> Geld.</strong> → I have no money.<br>
+                                    <strong>Wir haben <strong>keine</strong> Zeit.</strong> → We have no time.<br>
+                                    <strong>Das ist <strong>kein</strong> Problem.</strong> → That's no problem.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🎯 nicht vs. kein RULE</div>
+                            <p><strong>nicht</strong> = no VERB<br>
+                                <strong>kein</strong> = no NOUN<br>
+                                Ask: "Is there a noun after?" → Use <strong>kein</strong>!
+                            </p>
+                        </div>
+
+                        <div class="tip-box">
+                            <div class="tip-title">❌ Biggest Mistake</div>
+                            <p><strong>WRONG:</strong> Ich habe nicht ein Auto ❌<br>
+                                <strong>CORRECT:</strong> Ich habe kein Auto ✅
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 13. Prepositions -->
+                    <div id="prepositions" class="grammar-section">
+                        <h3>Prepositions</h3>
+                        <div class="grammar-grid">
+                            <div class="grammar-card">
+                                <h3>🎓 What is it?</h3>
+                                <p>Words showing <strong>place, direction, time</strong>.</p>
+                            </div>
+                            <div class="grammar-card">
+                                <h3>📝 Key Rules</h3>
+                                <p><strong>nach Hause</strong> = to home<br>
+                                    <strong>aus Berlin</strong> = from Berlin<br>
+                                    <strong>in die Schule</strong> = to school
+                                </p>
+                            </div>
+                        </div>
+
+                        <table class="verb-table">
+                            <tr>
+                                <th>Prep</th>
+                                <th>Meaning</th>
+                                <th>Example</th>
+                                <th>Translation</th>
+                            </tr>
+                            <tr>
+                                <td>in</td>
+                                <td>in</td>
+                                <td>Ich bin <strong>in</strong> Berlin.</td>
+                                <td>I'm in Berlin.</td>
+                            </tr>
+                            <tr>
+                                <td>auf</td>
+                                <td>on</td>
+                                <td>Das Buch ist <strong>auf</strong> dem Tisch.</td>
+                                <td>The book is on the table.</td>
+                            </tr>
+                            <tr>
+                                <td>mit</td>
+                                <td>with</td>
+                                <td>Ich gehe <strong>mit</strong> dir.</td>
+                                <td>I go with you.</td>
+                            </tr>
+                            <tr>
+                                <td>nach</td>
+                                <td>to home</td>
+                                <td>Ich gehe <strong>nach</strong> Hause.</td>
+                                <td>I go home.</td>
+                            </tr>
+                            <tr>
+                                <td>aus</td>
+                                <td>from place</td>
+                                <td>Ich komme <strong>aus</strong> Berlin.</td>
+                                <td>I'm from Berlin.</td>
+                            </tr>
+                            <tr>
+                                <td>für</td>
+                                <td>for</td>
+                                <td>Das ist <strong>für</strong> dich.</td>
+                                <td>That's for you.</td>
+                            </tr>
+                        </table>
+
+                        <div class="tip-box">
+                            <div class="tip-title">🚨 Fixed Errors</div>
+                            <p><strong>WRONG:</strong> zu Hause ❌ | von Berlin ❌<br>
+                                <strong>CORRECT:</strong> nach Hause ✅ | aus Berlin ✅
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Active section highlighting
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.grammar-section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            const progressBar = document.getElementById('tocProgress');
+
+            // Update active link and progress on scroll
+            function updateActiveSection() {
+                let currentSection = '';
+                const scrollPosition = window.scrollY + 100;
+
+                // Find current section
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                // Update active link
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Update progress bar
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (window.scrollY / totalHeight) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+
+            // Initial call
+            updateActiveSection();
+
+            // Update on scroll
+            window.addEventListener('scroll', updateActiveSection);
+
+            // Smooth scroll for TOC links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Your existing scroll detection for navbar
+        const nav = document.querySelector('.nav');
+        const navButtons = document.querySelectorAll('.nav-btn');
+
+        // Store original text with emojis
+        navButtons.forEach(btn => {
+            btn.setAttribute('data-original', btn.textContent);
+        });
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                nav.classList.add('scrolled');
+                // Remove emojis when scrolled
+                navButtons.forEach(btn => {
+                    const text = btn.getAttribute('data-text');
+                    if (text) {
+                        btn.textContent = text;
+                    }
+                });
+            } else {
+                nav.classList.remove('scrolled');
+                // Restore emojis
+                navButtons.forEach(btn => {
+                    const original = btn.getAttribute('data-original');
+                    if (original) {
+                        btn.textContent = original;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
