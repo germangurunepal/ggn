@@ -316,7 +316,7 @@
         });
 
         window.addEventListener('scroll', () => {
-            const currentScroll = window.PageTransitionEvent;
+            const currentScroll = window.pageYOffset;
 
             if (currentScroll > 100) {
                 nav.classList.add('scrolled');
