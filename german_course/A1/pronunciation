@@ -13,14 +13,14 @@
         <nav class="nav">
             <div class="nav-buttons">
                 <a href="../index.html" class="nav-btn" data-text="Introduction">Introduction</a>
-                <a href="ggn/german_course/A1/grammar.html" class="nav-btn" data-text="Grammar">Grammar</a>
-                <a href="ggn/german_course/A1/vocabulary.html" class="nav-btn" data-text="Vocabulary">Vocabulary</a>
-                <a href="ggn/german_course/A1/pronunciation.html" class="nav-btn" data-text="Pronunciation">Pronunciation</a>
-                <a href="ggn/german_course/A1/phrases.html" class="nav-btn" data-text="Phrases">Phrases</a>
-                <a href="ggn/german_course/A1/study.html" class="nav-btn" data-text="Study Plan">Study Plan</a>
-                <a href="ggn/german_course/A1/practice.html" class="nav-btn" data-text="Practice">Practice</a>
-                <a href="ggn/german_course/A1/resources.html" class="nav-btn" data-text="Resources">Resources</a>
-                <a href="ggn/german_course/A1/progress.html" class="nav-btn" data-text="Progress">Progress</a>
+                <a href="/ggn/german_course/A1/grammar.html" class="nav-btn" data-text="Grammar">Grammar</a>
+                <a href="/ggn/german_course/A1/vocabulary.html" class="nav-btn" data-text="Vocabulary">Vocabulary</a>
+                <a href="/ggn/german_course/A1/pronunciation.html" class="nav-btn" data-text="Pronunciation">Pronunciation</a>
+                <a href="/ggn/german_course/A1/phrases.html" class="nav-btn" data-text="Phrases">Phrases</a>
+                <a href="/ggn/german_course/A1/study.html" class="nav-btn" data-text="Study Plan">Study Plan</a>
+                <a href="/ggn/german_course/A1/practice.html" class="nav-btn" data-text="Practice">Practice</a>
+                <a href="/ggn/german_course/A1/resources.html" class="nav-btn" data-text="Resources">Resources</a>
+                <a href="/ggn/german_course/A1/progress.html" class="nav-btn" data-text="Progress">Progress</a>
             </div>
         </nav>
         <!-- Pronunciation Section -->
